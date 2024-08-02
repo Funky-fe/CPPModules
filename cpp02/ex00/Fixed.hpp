@@ -9,16 +9,11 @@ class Fixed
 
 	public:
 		Fixed();
+		Fixed (const Fixed& src);
+		Fixed& operator=(const Fixed& src);
 
-		Fixed(const Fixed& src);
-
-		Fixed& operator=(const Fixed& rhs);
-
-		// Destructor
 		~Fixed();
-
-		int getRawBits(void) const;
-
+		int getRawBits(void);
 		void setRawBits(int const raw);
 };
 
