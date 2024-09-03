@@ -1,0 +1,38 @@
+Check this site out to simulate the triangle and points: https://www.tutorialspoint.com/execute_matplotlib_online.php
+
+import matplotlib.pyplot as plt
+
+# Coordinates for triangle vertices
+a = (5.0, 50.0)
+b = (51.0, 50.0)
+c = (50.0, 53.0)
+
+# Points to test
+inside = (48.0, 51.0)
+outside = (60.0, 60.0)
+on_edge = (51.0, 50.0)
+point = (49.0, 50.8)
+
+# Create a new figure
+plt.figure()
+
+# Plot the triangle
+triangle_x = [a[0], b[0], c[0], a[0]]  # Closing the triangle by repeating the first point
+triangle_y = [a[1], b[1], c[1], a[1]]
+plt.plot(triangle_x, triangle_y, 'b-', label='Triangle')
+
+# Plot the points
+plt.plot(inside[0], inside[1], 'go', label='Inside Point')
+plt.plot(outside[0], outside[1], 'ro', label='Outside Point')
+plt.plot(on_edge[0], on_edge[1], 'yo', label='On Edge Point')
+plt.plot(point[0], point[1], 'co', label='Point')
+
+# Add labels and legend
+plt.legend()
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.title('Triangle and Points Visualization')
+
+# Show the plot
+plt.grid(True)
+plt.show()
